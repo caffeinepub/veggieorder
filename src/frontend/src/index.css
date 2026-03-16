@@ -1,0 +1,98 @@
+@font-face {
+  font-family: "Fraunces";
+  src: url("/assets/fonts/Fraunces.woff2") format("woff2");
+  font-weight: 300 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Figtree";
+  src: url("/assets/fonts/Figtree.woff2") format("woff2");
+  font-weight: 300 900;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Fresh market green palette */
+    --background: 0.98 0.01 145;
+    --foreground: 0.2 0.04 145;
+
+    --card: 1 0 0;
+    --card-foreground: 0.2 0.04 145;
+
+    --popover: 1 0 0;
+    --popover-foreground: 0.2 0.04 145;
+
+    /* Vibrant fresh green */
+    --primary: 0.5 0.17 145;
+    --primary-foreground: 0.99 0 0;
+
+    /* Light green secondary */
+    --secondary: 0.93 0.04 145;
+    --secondary-foreground: 0.3 0.1 145;
+
+    /* Warm orange accent */
+    --accent: 0.72 0.18 55;
+    --accent-foreground: 0.15 0.04 50;
+
+    --muted: 0.93 0.02 145;
+    --muted-foreground: 0.5 0.04 145;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.99 0 0;
+
+    --border: 0.88 0.04 145;
+    --input: 0.88 0.04 145;
+    --ring: 0.5 0.17 145;
+
+    --radius: 0.75rem;
+
+    --chart-1: 0.5 0.17 145;
+    --chart-2: 0.65 0.18 55;
+    --chart-3: 0.55 0.2 200;
+    --chart-4: 0.7 0.15 80;
+    --chart-5: 0.6 0.18 25;
+
+    --sidebar: 0.22 0.07 145;
+    --sidebar-foreground: 0.95 0.02 145;
+    --sidebar-primary: 0.65 0.18 145;
+    --sidebar-primary-foreground: 0.99 0 0;
+    --sidebar-accent: 0.3 0.08 145;
+    --sidebar-accent-foreground: 0.95 0.02 145;
+    --sidebar-border: 0.3 0.06 145;
+    --sidebar-ring: 0.5 0.17 145;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+  }
+}
+
+/* Cart badge pulse */
+@keyframes badge-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+.badge-pulse {
+  animation: badge-pulse 0.3s ease;
+}
